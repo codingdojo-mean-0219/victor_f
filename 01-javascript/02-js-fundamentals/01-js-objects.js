@@ -8,7 +8,12 @@ let students = [
     {name: 'Boris', cohort: 'June'}
 ];
 
-console.log(students);
+function call(arr){
+    for(var i of arr){
+        console.log("Name: "+i.name+", Cohort: "+i.cohort);
+    }
+}
+call(students)
 
 
 let users = {
@@ -24,13 +29,19 @@ let users = {
     ]
  };
 
-
- for(let type in users) {
-    console.log(type);
-    var count = 1;
-    for(let person in users[type]) {
-      let name = users[type][person].first_name+users[type][person].last_name;
-      console.log(`${count} - ${users[type][person].last_name}, ${users[type][person].first_name} - ${name.length}`);
-      count++;
+ function call2(object){
+    var x =1;
+    console.log(`Employees`);
+    for(var i of users.employees){
+       console.log(x+" - "+i.last_name+", "+i.first_name+" - "+(i.first_name.length+i.last_name.length));
+       x++ 
     }
- }
+    var x = 1
+    console.log(`Managers`);
+    for(var i of users.managers){
+       console.log(x+" - "+i.last_name+", "+i.first_name+" - "+(i.first_name.length+i.last_name.length));
+       x++ 
+    }
+}
+call2(users)
+ 
