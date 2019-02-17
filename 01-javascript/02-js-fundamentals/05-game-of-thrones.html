@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game of Thrones</title>
+	<script src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <style>
+        img {
+            width: 150px;
+            height: 200px;
+            display:inline-block;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('img').click(function(){
+                var id = $(this).attr('id');
+                $.get("https://anapioficeandfire.com/api/houses/" + id, showHouse);
+            })
+            
+        });
+        function showHouse(data){
+                var name = data.name;
+                var words = data.words;
+                var titles = data.titles;
+                $('.details').append("<h2>Name:</h2>" + name + "<h2>Words:</h2>" + words + "<h2>Titles:</h2>" + titles);
+                console.log(data);
+            }
+    </script>
+</head>
+<body>
+	<div class="container">
+		<img id="362" src="assets/stark.png">
+		<img id="378" src="assets/targ.png">
+		<img id="229" src="assets/lann.png">
+		<img id="17" src="assets/bar.png">
+    </div>
+    <h1>House Details:</h1>
+    <div class="details"></div>
+</body>
+</html>
