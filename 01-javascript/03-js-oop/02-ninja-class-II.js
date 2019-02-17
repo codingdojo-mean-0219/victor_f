@@ -22,7 +22,7 @@ function Ninja(name){
 			console.log(target.name + " was punched by "+this.name+ "and lost 5 health!");
 			return this;
 		else
-			console.log("Invalid target, please attack a Ninja.");
+			console.log("Please attack a Ninja");
 	}
 	this.kick = function(target){
 		if(target instanceof Ninja)
@@ -31,7 +31,7 @@ function Ninja(name){
 			console.log(target.name + ' was kicked by ' +this.name+ 'and lost '+damage+ ' health!');
 			return this;
 		else
-			console.log("Invalid target, please attack a Ninja.");
+			console.log("Please attack a Ninja");
 	}
 	
 }
