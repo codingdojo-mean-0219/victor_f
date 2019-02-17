@@ -1,1 +1,45 @@
-// 1 hour
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hunting Github</title>
+    <script src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(
+          function(){
+            $('#username').submit(function(){
+              if($("input[name='username']").val()){
+                $.get("https://api.github.com/users/"+($("input[name='username']").val()), displayName);
+                event.preventDefault();
+              }
+            });
+            function displayName(data) {
+              if(data.name) {
+                document.getElementById('name').innerHTML = data.name;
+              }
+              else {
+                document.getElementById('name').innerHTML = "Secret";
+              }
+            }
+            $('#reset').click(function(){
+              document.getElementById('name').innerHTML = "";
+              $('#username')[0].reset();
+            })
+          })
+      </script>
+
+</head>
+
+<body>
+    <h1>Hunting Github</h1>
+    <form id="username">
+        <input type="text" name="username" placeholder="username">
+        <input type="submit" value="Git Name!">
+    </form>
+    <p>Name is: <span id="name"></span></p>
+    <button id="reset">Reset</button>
+    
+</body>
+</html>
