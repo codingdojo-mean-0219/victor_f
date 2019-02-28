@@ -1,0 +1,14 @@
+{
+  "name": "03-ejs-cat-data",
+  "version": "1.0.0",
+  "description": "03-ejs-cat-data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
