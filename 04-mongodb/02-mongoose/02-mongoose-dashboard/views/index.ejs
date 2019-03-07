@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wildcats Dashboard</title>
+	<script src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<body>
+    <h1>Wild Cats Dashboard</h1>
+    <table class="table-striped col-10">
+        <tr>
+           <th>Name</th>
+           <th>Description</th>
+           <th>Created At</th>
+           <th>Actions</th>
+       </tr>
+ 
+       <% for (var i = 0; i < cats.length; i++) { %>
+       <tr>
+           <td><a href="/cats/<%= cats[i]._id %>"><%= cats[i].name %></a></td>
+           <td><%= cats[i].description %></td>
+           <td><%= cats[i].createdAt.toDateString() %></td>
+           <td><a href="/cats/edit/<%= cats[i]._id%>">Edit</a>, 
+           <form action="/cats/destroy/<%= cats[i]._id%>" method='post'>
+               <input type='submit' value='Remove'>
+           </form>
+           </td>
+       </tr>
+       <% } %>
+    </table>
+    <br>
+    <br>
+    <a href="/cats/new">Add a new cat!</a>     
+</body>
+</html>

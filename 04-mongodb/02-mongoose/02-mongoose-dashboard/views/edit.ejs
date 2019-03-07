@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Edit Cat</title>
+	<script src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Edit a Cat here!</h1>   
+        <h3>Name: <%= cats.name %></h3>
+        <h3>Description: <%= cats.description %></h3>
+        <h3>Created At: <%= cats.createdAt %></h3> 
+            <% if(typeof(errors) != 'undefined' ) { %>
+            <% for (var x in errors) { %>
+            <h3><%= errors[x].message %></h3>
+            <% } %>
+        <% } %>
+
+        <form action="/cats/<%= cats._id %>" method='post'>
+            <label for='name'>Edit Name: </label>
+            <input name='name' id='name' type='text' value="<%= cats.name %>">
+            <label for='description'>Edit Description: </label>
+            <textarea name='description' id='description'><%= cats.description %></textarea>
+            <input type='submit' value='Edit this cat!'>
+        </form>
+        <a href='/'>Index</a>
+        
+</body>
+</html>
