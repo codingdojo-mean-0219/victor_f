@@ -11,7 +11,6 @@ app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
 require('./config/mongoose.js');
-
 require('./config/routes.js')(app)
 
 app.listen(8000, function() {
