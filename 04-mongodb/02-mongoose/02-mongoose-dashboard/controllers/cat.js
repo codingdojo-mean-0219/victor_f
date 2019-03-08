@@ -22,7 +22,7 @@ module.exports = {
             if (err) {
                 res.render('new', {errors: puppy.errors})
             } else {
-                console.log("you have successfully added a cat")
+                console.log("you have successfully your cat")
                 res.redirect('/')
             }
         })

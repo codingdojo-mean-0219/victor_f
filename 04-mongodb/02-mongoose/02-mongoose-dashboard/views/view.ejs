@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= cats.name %></title>
+	<script src= 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<body>
+    <div class="container">
+            <h2>Cats</h2>   
+            <h3>Name: <%= cats.name %></h3>
+            <h3>Description: <%= cats.description %></h3>
+            <h3>Created At: <%= cats.createdAt %></h3> 
+                <% if(typeof(errors) != 'undefined' ) { %>
+                <% for (var x in errors) { %>
+                <h3><%= errors[x].message %></h3>
+                <% } %>
+            <% } %>
+        </div>
+        <a href='/'>Back</a>
+</body>
+</html>
