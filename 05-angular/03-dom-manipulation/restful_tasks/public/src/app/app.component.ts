@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
   showing: any
   showAll: any
 
-
   showTask(obj: object): void {
     console.log(`this works if it shows the task: ${obj}`)
     this.showing =obj
@@ -22,15 +21,11 @@ export class AppComponent implements OnInit {
 
   constructor(private _httpService: HttpService){}
   ngOnInit() {
-
   }
-
   onshowAll() {
      console.log("showing all tasks");
-
     this.getTasksFromService()
    }
-
   getTasksFromService(){
     let observable = this._httpService.getTasks();
     observable.subscribe(data => {
@@ -38,7 +33,6 @@ export class AppComponent implements OnInit {
        console.log(data);
        console.log(this.tasks," = ITS WORKING!");
        this.showAll = true
-
     });
   }
 
