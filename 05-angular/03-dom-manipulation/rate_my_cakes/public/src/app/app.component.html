@@ -34,8 +34,8 @@
 <div class="col-sm">
   <div class="cakeList">
     <div *ngFor="let c of cakes">
-      <form class="form" id="cakeForm" (submit)="rateCake(cake._id)">
-        <input type="hidden" [(ngModel)]="cake['_id']" name="cake._id"  >
+      <form class="form" id="cakeForm" (submit)="ratedCake(cake._id)">
+        <input type="hidden" [(ngModel)]="ratedCake['_id']" name="cake._id"  >
             <select [(ngModel)]="ratedCake.stars" name="ratedCake.stars" >
                     <option value="1">1 Star</option>
                     <option value="2">2 Stars</option>

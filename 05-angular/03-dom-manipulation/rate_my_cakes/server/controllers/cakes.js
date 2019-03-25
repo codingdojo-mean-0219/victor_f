@@ -1,7 +1,6 @@
 
 const mongoose = require("mongoose");
 const Cake = mongoose.model("Cake");
-// const Rating = mongoose.model("Rating");
 
 module.exports = {
     index: (req, res) => {
